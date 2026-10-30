@@ -10,8 +10,9 @@ document.querySelectorAll('[data-wa], [data-wa-model]').forEach((el) => {
 });
 
 // Cores dos modelos: troca a foto e leva a cor escolhida para a mensagem do WhatsApp
-document.querySelectorAll('.card[data-model]').forEach((card) => {
-  const img = card.querySelector('.card__media img');
+document.querySelectorAll('[data-model]').forEach((card) => {
+  const img = card.querySelector('[data-model-img]');
+  const thumb = document.querySelector(`[aria-controls="${card.id}"] img`);
   const label = card.querySelector('.swatches__label');
   const link = card.querySelector('[data-wa-model]');
   const model = card.dataset.model;
@@ -24,6 +25,7 @@ document.querySelectorAll('.card[data-model]').forEach((card) => {
     label.textContent = color;
     link.href = waLink(`Olá! Quero saber mais sobre o purificador ${model} na cor ${color.toLowerCase()}.`);
     if (img.getAttribute('src') === btn.dataset.src) return;
+    if (thumb) thumb.src = btn.dataset.src;
     img.classList.add('is-swapping');
     const next = new Image();
     next.onload = () => {
@@ -69,32 +71,46 @@ const io = new IntersectionObserver((entries) => {
 }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
 document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
 
-// Carrossel: arrastar com o mouse e setas
-document.querySelectorAll('[data-carousel]').forEach((root) => {
-  const track = root.querySelector('.carousel__track');
-  const step = () => track.querySelector('.card').offsetWidth + 24;
+// Vitrine: escolha do modelo pelas miniaturas, setas do teclado ou deslizando a foto no celular
+document.querySelectorAll('[data-showcase]').forEach((root) => {
+  const tabs = [...root.querySelectorAll('[role="tab"]')];
+  const show = (i, focus = false) => {
+    i = (i + tabs.length) % tabs.length;
+    tabs.forEach((t, j) => {
+      const on = j === i;
+      t.classList.toggle('is-active', on);
+      t.setAttribute('aria-selected', String(on));
+      t.tabIndex = on ? 0 : -1;
+      const panel = document.getElementById(t.getAttribute('aria-controls'));
+      if (on && panel.hidden) {
+        panel.hidden = false;
+        panel.classList.remove('is-entering');
+        void panel.offsetWidth;
+        panel.classList.add('is-entering');
+      } else if (!on) {
+        panel.hidden = true;
+      }
+    });
+    if (focus) tabs[i].focus();
+  };
+  const current = () => tabs.findIndex((t) => t.classList.contains('is-active'));
 
-  root.querySelectorAll('.arrow').forEach((btn) => {
-    btn.addEventListener('click', () => track.scrollBy({ left: step() * Number(btn.dataset.dir), behavior: 'smooth' }));
+  tabs.forEach((t, i) => {
+    t.addEventListener('click', () => show(i));
+    t.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight') { e.preventDefault(); show(i + 1, true); }
+      if (e.key === 'ArrowLeft') { e.preventDefault(); show(i - 1, true); }
+    });
   });
 
-  let startX = 0, startLeft = 0, moved = false, down = false;
-  track.addEventListener('pointerdown', (e) => {
-    if (e.pointerType !== 'mouse') return;
-    down = true; moved = false; startX = e.clientX; startLeft = track.scrollLeft;
-  });
-  window.addEventListener('pointermove', (e) => {
-    if (!down) return;
-    const dx = e.clientX - startX;
-    if (!moved && Math.abs(dx) > 5) { moved = true; track.classList.add('is-dragging'); }
-    if (moved) track.scrollLeft = startLeft - dx;
-  });
-  window.addEventListener('pointerup', () => {
-    if (!down) return;
-    down = false;
-    if (!moved) return;
-    track.classList.remove('is-dragging');
-    const s = step();
-    track.scrollTo({ left: Math.round(track.scrollLeft / s) * s, behavior: 'smooth' });
+  root.querySelectorAll('.panel__media').forEach((media) => {
+    let x0 = null;
+    media.addEventListener('touchstart', (e) => { x0 = e.touches[0].clientX; }, { passive: true });
+    media.addEventListener('touchend', (e) => {
+      if (x0 === null) return;
+      const dx = e.changedTouches[0].clientX - x0;
+      x0 = null;
+      if (Math.abs(dx) > 50) show(current() + (dx < 0 ? 1 : -1));
+    });
   });
 });
