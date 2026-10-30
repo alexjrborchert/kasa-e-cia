@@ -192,14 +192,42 @@ p { margin: 0; }
 .maint__card hr { border: 0; height: 1px; margin: 24px 0; background: rgba(255,255,255,.14); }
 .maint__small { font-size: 14px; opacity: .8; }
 
-/* Other lines */
-.lines__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-.line { padding: 32px 28px; border-radius: var(--radius); border: 1px solid var(--line); transition: border-color .3s, transform .3s, box-shadow .3s; }
-.line:hover { border-color: var(--cyan-2); transform: translateY(-4px); box-shadow: var(--shadow); }
-.line__icon { display: grid; place-items: center; width: 56px; height: 56px; margin-bottom: 22px; border-radius: 16px; background: var(--soft); color: var(--blue); }
-.line__icon svg { width: 28px; height: 28px; }
-.line h3 { font-size: 20px; font-weight: 700; }
-.line p { margin: 8px 0 18px; color: var(--muted); font-size: 15px; }
+/* Bebedouros */
+.coolers__grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+.cooler { display: flex; flex-direction: column; border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; background: var(--white); transition: border-color .3s, transform .3s, box-shadow .3s; }
+.cooler:hover { border-color: var(--cyan-2); transform: translateY(-4px); box-shadow: var(--shadow); }
+.cooler__media { position: relative; padding: 16px 16px 12px; background: radial-gradient(circle at 50% 40%, #fff 0%, #f3f8fa 100%); border-bottom: 1px solid var(--line); }
+.cooler__media > img { width: 100%; aspect-ratio: 1; object-fit: contain; mix-blend-mode: multiply; transition: opacity .2s; }
+.cooler__media > img.is-swapping { opacity: 0; }
+.cooler__cap { position: absolute; top: 14px; left: 14px; z-index: 1; padding: 6px 12px; border-radius: 10px; background: var(--navy); color: var(--white); font-family: Poppins, sans-serif; font-weight: 700; font-size: 15px; }
+.cooler__thumbs { display: flex; justify-content: center; gap: 8px; margin-top: 4px; }
+.cooler__thumbs button { width: 46px; height: 46px; padding: 3px; border: 1px solid var(--line); border-radius: 10px; background: var(--white); cursor: pointer; transition: border-color .2s; }
+.cooler__thumbs button img { width: 100%; height: 100%; object-fit: contain; }
+.cooler__thumbs button:hover { border-color: var(--cyan-2); }
+.cooler__thumbs button.is-active { border-color: var(--blue); box-shadow: 0 0 0 1px var(--blue); }
+.cooler__body { display: flex; flex-direction: column; flex: 1; padding: 20px; }
+.cooler__body h3 { font-size: 19px; font-weight: 700; }
+.cooler__body p { margin-top: 6px; color: var(--muted); font-size: 14px; }
+.cooler__body .chips { margin: 14px 0 18px; }
+.cooler__body .chips li { font-size: 12px; }
+.cooler__body .card__link { margin-top: auto; }
+.coolers__note { margin-top: 28px; text-align: center; color: var(--muted); }
+.coolers__note a { color: var(--blue); font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
+
+/* Climatizadores */
+.climate { background: linear-gradient(180deg, var(--soft), #fff); }
+.climate__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.brand { display: flex; flex-direction: column; border-radius: 24px; overflow: hidden; background: var(--white); border: 1px solid var(--line); box-shadow: var(--shadow); }
+.brand__media { display: flex; align-items: flex-end; justify-content: center; height: 380px; padding: 32px 32px 0; background: radial-gradient(circle at 50% 60%, #e3f6fb 0%, #f5fbfd 60%, #fff 100%); }
+.brand--alt .brand__media { background: radial-gradient(circle at 50% 60%, #d3f2fa 0%, #eaf8fc 60%, #fff 100%); }
+.brand__media img { max-width: 100%; max-height: 100%; width: auto; height: 100%; object-fit: contain; filter: drop-shadow(0 20px 22px rgba(11,42,63,.18)); transition: transform .5s; }
+.brand:hover .brand__media img { transform: scale(1.03); }
+.brand__body { display: flex; flex-direction: column; flex: 1; padding: 32px; }
+.brand__name { font-size: 12px; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; color: var(--blue); }
+.brand__body h3 { margin-top: 6px; font-size: 26px; font-weight: 800; }
+.brand__body > p:not(.brand__name) { margin-top: 10px; color: var(--muted); }
+.brand__body .chips { margin: 18px 0 24px; }
+.brand__body .btn { align-self: flex-start; margin-top: auto; }
 
 /* Nota no Google e loja */
 .rating { display: inline-flex; align-items: center; gap: 10px; margin-top: 22px; padding: 8px 14px; border-radius: 999px; background: var(--white); border: 1px solid var(--line); font-size: 14px; color: var(--navy-2); transition: border-color .2s; }
@@ -267,7 +295,12 @@ p { margin: 0; }
   .features__grid { grid-template-columns: repeat(2, 1fr); }
   .feature:nth-child(3) { border-left: 0; }
   .feature:nth-child(n+3) { border-top: 1px solid var(--line); }
-  .steps__list, .lines__grid { grid-template-columns: 1fr; }
+  .steps__list { grid-template-columns: 1fr; }
+  .coolers__grid { grid-template-columns: repeat(2, 1fr); }
+  .climate__grid { grid-template-columns: 1fr; }
+  .brand__media { height: 300px; }
+  .brand__body { padding: 24px; }
+  .brand__body .btn { align-self: stretch; }
   .maint__grid { grid-template-columns: 1fr; gap: 40px; }
   .store__grid { grid-template-columns: 1fr; gap: 40px; }
   .panel { grid-template-columns: 1fr; }
@@ -291,6 +324,14 @@ p { margin: 0; }
   .feature { display: grid; grid-template-columns: 36px 1fr; column-gap: 14px; padding: 20px; }
   .feature svg { grid-row: span 2; margin: 0; }
   .store__details { grid-template-columns: 1fr; }
+  .coolers__grid { grid-template-columns: 1fr; gap: 14px; }
+  .cooler { flex-direction: row; }
+  .cooler__media { flex: 0 0 44%; padding: 40px 8px 10px; border-bottom: 0; border-right: 1px solid var(--line); }
+  .cooler__cap { top: 10px; left: 10px; padding: 4px 10px; font-size: 14px; }
+  .cooler__thumbs { gap: 4px; }
+  .cooler__thumbs button { width: 36px; height: 36px; padding: 2px; border-radius: 8px; }
+  .cooler__body { padding: 16px; }
+  .cooler__body .chips { margin: 10px 0 14px; gap: 6px; }
   .cta { padding: 76px 0; }
   .cta__inner { padding: 52px 24px; }
   .footer__grid { grid-template-columns: 1fr; }

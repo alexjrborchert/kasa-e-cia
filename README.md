@@ -13,7 +13,13 @@ Nova landing page estática (substitui a página WordPress atual em kasaecia.com
 
 ## Pendências com a cliente
 
-- Linhas confirmadas pelo Instagram e Google: purificadores, bebedouros, climatizadores e manutenção/troca de refil. Há também um destaque "Eletrodoméstico" no Instagram (não está no site).
+- Linhas confirmadas pelo Instagram e Google: purificadores, bebedouros (Knox), climatizadores (Ventisol e Ultra Ar) e manutenção/troca de refil. Há também um destaque "Eletrodoméstico" no Instagram (não está no site).
 - Endereço, horário, telefone, nota e avaliações vêm do perfil do Google (outubro de 2026); 12x sem juros vem da bio do Instagram. CNPJ 04.556.802/0001-33 no rodapé.
 - Se ela trabalha com os 5 modelos (Foz, Star, Slim, Fit, Baby) e todas as cores.
 - Se a revenda pode usar as fotos oficiais da Everest (revendas autorizadas normalmente podem).
+
+## Bebedouros e climatizadores
+
+- `assets/img/bebedouros/`: bebedouros Knox 25, 50, 100 e 200 L, 3 ângulos cada. O site da Knox está com as fotos quebradas (outubro de 2026), então as imagens vieram do softgyn.com.br, a pedido do Alex; textos e capacidades seguem knoxrefrigeradores.com.br.
+- `assets/img/climatizadores/ventisol-familia.webp`: família Ventisol, do softgyn.com.br.
+- `assets/img/climatizadores/ultraar-familia.webp`: recortada do banner do site da Ultra Ar (fundo ciano, pedestal, texto e ícone removidos). Modelos listados conforme ultraar.com.br; o site não publica ficha técnica.
