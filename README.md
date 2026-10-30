@@ -20,6 +20,6 @@ Nova landing page estática (substitui a página WordPress atual em kasaecia.com
 
 ## Bebedouros e climatizadores
 
-- `assets/img/bebedouros/`: bebedouros Knox 25, 50, 100 e 200 L, 3 ângulos cada. O site da Knox está com as fotos quebradas (outubro de 2026), então as imagens vieram do softgyn.com.br, a pedido do Alex; textos e capacidades seguem knoxrefrigeradores.com.br.
+- `assets/img/bebedouros/`: bebedouros Knox 25, 50, 100 e 200 L (no site usamos só a vista frontal, `-1`; os outros ângulos ficam guardados). O site da Knox está com as fotos quebradas (outubro de 2026), então as imagens vieram do softgyn.com.br, a pedido do Alex; textos e capacidades seguem knoxrefrigeradores.com.br.
 - `assets/img/climatizadores/ventisol-familia.webp`: família Ventisol, do softgyn.com.br.
 - `assets/img/climatizadores/ultraar-familia.webp`: recortada do banner do site da Ultra Ar (fundo ciano, pedestal, texto e ícone removidos). Modelos listados conforme ultraar.com.br; o site não publica ficha técnica.

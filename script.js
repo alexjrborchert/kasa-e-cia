@@ -114,19 +114,3 @@ document.querySelectorAll('[data-showcase]').forEach((root) => {
     });
   });
 });
-
-// Bebedouros: troca o ângulo da foto pelas miniaturas
-document.querySelectorAll('[data-gallery]').forEach((card) => {
-  const main = card.querySelector('[data-gallery-main]');
-  const thumbs = card.querySelectorAll('.cooler__thumbs button');
-  thumbs.forEach((btn) => {
-    btn.addEventListener('click', () => {
-      thumbs.forEach((b) => b.classList.toggle('is-active', b === btn));
-      if (main.getAttribute('src') === btn.dataset.src) return;
-      main.classList.add('is-swapping');
-      const next = new Image();
-      next.onload = () => { main.src = btn.dataset.src; main.classList.remove('is-swapping'); };
-      next.src = btn.dataset.src;
-    });
-  });
-});
