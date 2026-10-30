@@ -14,6 +14,6 @@ Nova landing page estática (substitui a página WordPress atual em kasaecia.com
 ## Pendências com a cliente
 
 - Linhas confirmadas pelo Instagram e Google: purificadores, bebedouros, climatizadores e manutenção/troca de refil. Há também um destaque "Eletrodoméstico" no Instagram (não está no site).
-- Endereço, horário, telefone, nota e avaliações vêm do perfil do Google (outubro de 2026); 12x sem juros vem da bio do Instagram. Falta o CNPJ para o rodapé.
+- Endereço, horário, telefone, nota e avaliações vêm do perfil do Google (outubro de 2026); 12x sem juros vem da bio do Instagram. CNPJ 04.556.802/0001-33 no rodapé.
 - Se ela trabalha com os 5 modelos (Foz, Star, Slim, Fit, Baby) e todas as cores.
 - Se a revenda pode usar as fotos oficiais da Everest (revendas autorizadas normalmente podem).
