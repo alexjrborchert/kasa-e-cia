@@ -13,7 +13,7 @@ Nova landing page estática (substitui a página WordPress atual em kasaecia.com
 
 ## Pendências com a cliente
 
-- Confirmar quais "outras linhas" ela vende (hoje: bebedouros, refis e filtros, climatizadores).
-- Cidade/região de atendimento, endereço, CNPJ e Instagram próprio (o Instagram do site atual aponta para a agência).
+- Linhas confirmadas pelo Instagram e Google: purificadores, bebedouros, climatizadores e manutenção/troca de refil. Há também um destaque "Eletrodoméstico" no Instagram (não está no site).
+- Endereço, horário, telefone, nota e avaliações vêm do perfil do Google (outubro de 2026); 12x sem juros vem da bio do Instagram. Falta o CNPJ para o rodapé.
 - Se ela trabalha com os 5 modelos (Foz, Star, Slim, Fit, Baby) e todas as cores.
 - Se a revenda pode usar as fotos oficiais da Everest (revendas autorizadas normalmente podem).
