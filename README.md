@@ -23,3 +23,18 @@ Nova landing page estática (substitui a página WordPress atual em kasaecia.com
 - `assets/img/bebedouros/`: bebedouros Knox 25, 50, 100 e 200 L (no site usamos só a vista frontal, `-1`; os outros ângulos ficam guardados). O site da Knox está com as fotos quebradas (outubro de 2026), então as imagens vieram do softgyn.com.br, a pedido do Alex; textos e capacidades seguem knoxrefrigeradores.com.br.
 - `assets/img/climatizadores/ventisol-familia.webp`: família Ventisol, do softgyn.com.br.
 - `assets/img/climatizadores/ultraar-familia.webp`: recortada do banner do site da Ultra Ar (fundo ciano, pedestal, texto e ícone removidos). Modelos listados conforme ultraar.com.br; o site não publica ficha técnica.
+
+## Publicação (kasaecia.com)
+
+O domínio está na Hostinger (hPanel, servidor LiteSpeed). Antes deste site, rodava um WordPress (tema Neve + Elementor) em `public_html`.
+
+Arquivos que vão para `public_html`:
+
+- `index.html`, `styles.css`, `script.js`, `.htaccess`, `robots.txt`, `sitemap.xml`
+- a pasta `assets/` inteira (com as subpastas `img/purificadores`, `img/bebedouros` e `img/climatizadores`)
+
+Não enviar `README.md`, `.gitignore`, `.nojekyll`, `.claude/` nem `.git/`.
+
+`.htaccess` faz `index.html` ser a página inicial, redireciona http/www para https://kasaecia.com, manda endereços antigos do WordPress (`/wp-admin`, `/wp-content`…) para a home e guarda imagens em cache por 30 dias. Ao trocar uma imagem, use um nome de arquivo novo.
+
+A prévia em https://alexjrborchert.github.io/kasa-e-cia/ continua no ar com `canonical` apontando para kasaecia.com.
