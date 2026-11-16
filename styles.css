@@ -248,7 +248,7 @@ p { margin: 0; }
 /* Footer */
 .footer { background: var(--navy); color: #a9c3d3; padding: 64px 0 0; font-size: 15px; }
 .footer__grid { display: grid; grid-template-columns: 1.6fr 1fr 1fr; gap: 40px; }
-.footer img { width: 150px; margin-bottom: 16px; }
+.footer__logo { width: 150px; height: auto; margin-bottom: 18px; padding: 10px 14px; border-radius: 12px; background: var(--white); box-sizing: content-box; }
 .footer h4 { font-size: 14px; letter-spacing: .1em; text-transform: uppercase; color: var(--white); margin-bottom: 14px; }
 .footer a { display: block; margin-bottom: 8px; transition: color .2s; }
 .footer a:hover { color: var(--cyan); }

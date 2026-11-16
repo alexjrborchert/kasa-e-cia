@@ -1,0 +1,5 @@
+# Configuração local de prévia (só deste computador)
+.claude/
+
+# Arquivos brutos temporários
+_raw/
