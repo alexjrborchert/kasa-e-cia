@@ -38,3 +38,11 @@ Não enviar `README.md`, `.gitignore`, `.nojekyll`, `.claude/` nem `.git/`.
 `.htaccess` faz `index.html` ser a página inicial, redireciona http/www para https://kasaecia.com, manda endereços antigos do WordPress (`/wp-admin`, `/wp-content`…) para a home e guarda imagens em cache por 30 dias. Ao trocar uma imagem, use um nome de arquivo novo.
 
 A prévia em https://alexjrborchert.github.io/kasa-e-cia/ continua no ar com `canonical` apontando para kasaecia.com.
+
+### Lançamento (23/11/2026)
+
+- No ar em https://kasaecia.com, enviado pelo File Browser da Hostinger (hPanel → Arquivos → Gerenciador de arquivos).
+- O WordPress antigo foi **movido, não apagado**, para `public_html/_wp-antigo/` (a raiz da conta tem o aviso "DO_NOT_UPLOAD_HERE", por isso não ficou fora). A pasta tem um `.htaccess` com `Require all denied`; o `.htaccess` original do WordPress está lá como `.htaccess.wordpress`. O banco de dados do WordPress não foi tocado.
+- O plano Premium não permite backup manual; havia um backup automático de 20/11/2026 21:05.
+- Para voltar ao WordPress: apagar os arquivos do site novo em `public_html`, mover o conteúdo de `_wp-antigo` de volta e renomear `.htaccess.wordpress` para `.htaccess`.
+- Para atualizar: enviar só os arquivos alterados para as mesmas pastas em `public_html`.
