@@ -3,3 +3,6 @@
 
 # Arquivos brutos temporários
 _raw/
+
+# Cópia dos arquivos para enviar à Hostinger
+entrega/
